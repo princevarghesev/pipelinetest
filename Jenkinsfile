@@ -7,9 +7,9 @@ pipeline {
 
         stage('GitHub Checkout') {
             steps {
-                	git branch: 'main',
-    			credentialsId: 'GitHubCred',
-    			url: 'https://github.com/princevarghesev/pipelinetest.git'
+                    git branch: 'main',
+    		    credentialsId: 'GitHubCred',
+    		    url: 'https://github.com/princevarghesev/pipelinetest.git'
 
 		//  Location of Code chekcout => C:\ProgramData\Jenkins\.jenkins\workspace
 
@@ -18,14 +18,16 @@ pipeline {
 
 	stage('Maven Build') {
             steps {
-                // bat 'mvn -f pipelinetest/pom.xml clean install'
+               
  		bat 'mvn install'
             }
         }
 
 	stage('Image Build') {
             steps {
-                echo 'Image Build'
+                sh 'docker build -t prince162222/pipelinetest:latest'
+ 		sh 'docker login --username=prince162222 --password=Ecnirp@409@Dtrn' 
+ 		sh 'docker push prince162222/pipelinetest:latest'
             }
         }
 
