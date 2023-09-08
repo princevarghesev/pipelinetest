@@ -3,9 +3,30 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+
+        stage('GitHub Checkout') {
             steps {
-                echo 'Hello World - Prince Test010'
+                	git branch: 'main',
+    			credentialsId: 'GitHubCred',
+    			url: 'https://github.com/princevarghesev/pipelinetest.git'
+            	}
+        }
+
+	stage('Maven Build') {
+            steps {
+                echo 'Maven Build'
+            }
+        }
+
+	stage('Image Build') {
+            steps {
+                echo 'Image Build'
+            }
+        }
+
+	stage('K8 Deploy') {
+            steps {
+                echo 'K8 Deploy'
             }
         }
     }
