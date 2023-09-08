@@ -9,12 +9,15 @@ pipeline {
                 	git branch: 'main',
     			credentialsId: 'GitHubCred',
     			url: 'https://github.com/princevarghesev/pipelinetest.git'
+
+		//  Location of Code chekcout => C:\ProgramData\Jenkins\.jenkins\workspace
+
             	}
         }
 
 	stage('Maven Build') {
             steps {
-                echo $WORKSPACE;
+                 echo 'Maven Build'
             }
         }
 
