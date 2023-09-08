@@ -18,7 +18,8 @@ pipeline {
 
 	stage('Maven Build') {
             steps {
-                 sh 'mvn -f pipelinetest/pom.xml clean install'
+                // bat 'mvn -f pipelinetest/pom.xml clean install'
+ 		bat 'mvn install'
             }
         }
 
