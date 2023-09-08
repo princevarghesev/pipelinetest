@@ -14,7 +14,7 @@ pipeline {
 
 	stage('Maven Build') {
             steps {
-                echo 'Maven Build'
+                echo $WORKSPACE
             }
         }
 
