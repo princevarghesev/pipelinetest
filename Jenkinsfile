@@ -35,6 +35,7 @@ pipeline {
 	stage('EKS Cluster Deploy') {
             steps {
     		echo "hello";
+		    
               //  bat 'kubectl apply -f deployment/deployment.yaml'
  	      //  bat 'kubectl apply -f deployment/service.yaml' 
             }
