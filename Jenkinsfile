@@ -20,8 +20,7 @@ pipeline {
                
  		bat 'mvn install'
             }
-        }
-
+	}
 	stage('Image Build') {
             steps {
               //   bat 'docker build -t pipelinetest .'
