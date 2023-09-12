@@ -37,8 +37,7 @@ pipeline {
 
               //  bat 'kubectl apply -f deployment/deployment.yaml'
  	      //  bat 'kubectl apply -f deployment/service.yaml' 
-             //   123
-             //        
+               // 888
             }
         }
     }
