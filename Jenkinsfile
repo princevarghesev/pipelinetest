@@ -23,6 +23,8 @@ pipeline {
 	}
 	stage('Image Build') {
             steps {
+
+		    echo "hello";
               //   bat 'docker build -t pipelinetest .'
               //   bat 'docker tag pipelinetest prince162222/pipelinetest:latest'
  	      //   bat 'docker login --username=prince162222 --password=Ecnirp@409@Dtrn' 
@@ -32,7 +34,7 @@ pipeline {
 
 	stage('EKS Cluster Deploy') {
             steps {
-
+    		echo "hello";
               //  bat 'kubectl apply -f deployment/deployment.yaml'
  	      //  bat 'kubectl apply -f deployment/service.yaml' 
             }
