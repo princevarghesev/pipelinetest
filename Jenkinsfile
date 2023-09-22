@@ -36,7 +36,8 @@ pipeline {
             steps {
 
               bat 'kubectl apply -f deployment/deployment.yaml'
- 	      bat 'kubectl apply -f deployment/service.yaml'     
+ 	      bat 'kubectl apply -f deployment/service.yaml'
+     
             }
         }
 	
