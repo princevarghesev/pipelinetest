@@ -35,8 +35,8 @@ pipeline {
 	stage('EKS Cluster Deploy') {
             steps {
 
-              bat 'kubectl apply -f deployment/deployment.yaml'
- 	      bat 'kubectl apply -f deployment/service.yaml'
+              bat 'kubectl apply -f deployment/deployment.yaml --context mycluster'
+ 	      bat 'kubectl apply -f deployment/service.yaml --context mycluster'
 
             }
         }
