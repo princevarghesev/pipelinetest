@@ -31,7 +31,14 @@ pipeline {
  	      bat 'docker push prince162222/pipelinetest:latest'
             }
         }
+	
+	stage('EKS Cluster Deploy') {
+            steps {
 
+              bat 'kubectl apply -f deployment/deployment.yaml'
+ 	      bat 'kubectl apply -f deployment/service.yaml'     
+            }
+        }
 	
     }
 }
