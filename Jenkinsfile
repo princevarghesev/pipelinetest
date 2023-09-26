@@ -38,10 +38,7 @@ pipeline {
              
 
 	withCredentials([[
-    		 withCredentials([[$class: 'UsernamePasswordMultiBinding', 
-                 credentialsId: 'awscredup', 
-                 usernameVariable: 'AWS_ACCESS_KEY_ID', 
-                 passwordVariable: 'AWS_SECRET_ACCESS_KEY']])  {                      
+    		 withCredentials([[$class: 'UsernamePasswordMultiBinding',credentialsId: 'awscredup',usernameVariable: 'AWS_ACCESS_KEY_ID',passwordVariable: 'AWS_SECRET_ACCESS_KEY']])  {                      
 
 	      bat 'aws eks update-kubeconfig --name mycluster --region ap-south-1'
               bat 'kubectl apply -f deployment/deployment.yaml'
@@ -52,6 +49,8 @@ pipeline {
 	  }
         }
 	
+
+
     }
 
 }
