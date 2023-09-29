@@ -35,7 +35,7 @@ pipeline {
 	stage('EKS Cluster Deploy') {
             
 	steps {
-   
+                // Uses AWS Credential Building
  		withCredentials(
 			[[$class: 'AmazonWebServicesCredentialsBinding',
 			credentialsId: 'awscredac',
