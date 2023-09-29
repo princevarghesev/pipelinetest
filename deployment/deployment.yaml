@@ -13,8 +13,6 @@ spec:
     metadata:
       labels:
         app: pipelinedeployment
-      annotations: 
-        date: "+%H:%M:%S %d/%m/%y"
     spec:
       imagePullSecrets:
         - name: "dhubauth"
@@ -23,15 +21,5 @@ spec:
          image: prince162222/pipelinetest:latest
          imagePullPolicy: Always
          ports:
-            - name: http
-              containerPort: 8085
-         readinessProbe:
-          tcpSocket:
-            port: 8085
-          initialDelaySeconds: 60
-          periodSeconds: 10
-         livenessProbe:
-          tcpSocket:
-            port: 8085
-          initialDelaySeconds: 60
-          periodSeconds: 20
+            - containerPort: 80
+            - containerPort: 443

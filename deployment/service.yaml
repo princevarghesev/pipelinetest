@@ -5,9 +5,14 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8085
-      targetPort: 8085
-      nodePort: 31004
+    - name: http
+      protocol: TCP
+      port: 8085
+      targetPort: 80
+    - name: https
+      protocol: TCP
+      port: 8086
+      targetPort: 443
   selector:
     app: pipelinedeployment
       
