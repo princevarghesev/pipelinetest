@@ -26,9 +26,9 @@ pipeline {
 	stage('Image Build') {
             steps {
               bat 'docker build -t pipelinetest .'
-              bat 'docker tag pipelinetest prince162222/pipelinetest:latest'
+              bat 'docker tag pipelinetest prince162222/pipelinetest'
  	      bat 'docker login --username=prince162222 --password=Ecnirp@409@Dtrn' 
- 	      bat 'docker push prince162222/pipelinetest:latest'
+ 	      bat 'docker push prince162222/pipelinetest'
             }
         }
         

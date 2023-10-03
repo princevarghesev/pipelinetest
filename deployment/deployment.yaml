@@ -19,7 +19,7 @@ spec:
       containers:
        - name: pipelinedeployment-container
          image: prince162222/pipelinetest:latest
-         imagePullPolicy: Always
+         imagePullPolicy: IfNotPresent
          ports:
             - containerPort: 80
 
