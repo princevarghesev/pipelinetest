@@ -6,8 +6,8 @@ spec:
   type: NodePort
   ports:
     - name: http
-      port: 80
-      targetPort: 80
+      port: 8085
+      targetPort: 8085
       nodePort: 31821
   selector:
     app: pipelinedeployment
