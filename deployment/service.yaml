@@ -6,13 +6,8 @@ spec:
   type: NodePort
   ports:
     - name: http
-      protocol: TCP
-      port: 8085
+      port: 80
       targetPort: 80
-    - name: https
-      protocol: TCP
-      port: 8086
-      targetPort: 443
   selector:
     app: pipelinedeployment
       
