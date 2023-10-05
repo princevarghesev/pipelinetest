@@ -25,6 +25,11 @@ pipeline {
 
 	stage('Image Build') {
             steps {
+
+              // Do not use :latest tag while tagging and pushing to docker repository
+              // Only use :latest tag while refering docker hub image at k8 deployment YAML file for pulling
+              // Do not use image pull policy always - Only use ifNotPresent while defining image pull policy
+               
               bat 'docker build -t pipelinetest .'
               bat 'docker tag pipelinetest prince162222/pipelinetest'
  	      bat 'docker login --username=prince162222 --password=Ecnirp@409@Dtrn' 

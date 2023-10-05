@@ -3,11 +3,12 @@ kind: Service
 metadata:
   name: pipelineservice
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
     - name: http
       port: 8085
       targetPort: 8085
+      nodePort: 31821
   selector:
     app: pipelinedeployment
       
