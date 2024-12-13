@@ -12,7 +12,7 @@ public class PipelineController {
 
     @GetMapping("/load")
     public String loadPipelineMessageMethod(){
-        return "Test Pipeline Message - Prince";
+        return "Test Pipeline Message - Staging";
     }
     
 }
